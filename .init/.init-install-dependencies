@@ -1,0 +1,4 @@
+{
+    "command": "npm install",
+    "working_directory": "/home/kavia/workspace/code-generation/react-application-end-to-end-test-suite-114-123/test_suite"
+}
