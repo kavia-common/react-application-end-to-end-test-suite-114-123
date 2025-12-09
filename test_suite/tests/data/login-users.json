@@ -1,0 +1,45 @@
+{
+  "valid": [
+    {
+      "caseId": "TC-LOGIN-VALID-001",
+      "username": "valid.user@example.com",
+      "password": "ValidPass@123"
+    }
+  ],
+  "invalidCredentials": [
+    {
+      "caseId": "TC-LOGIN-INVALID-001",
+      "username": "invalid.user@example.com",
+      "password": "WrongPass@123",
+      "expectedError": "Invalid username or password"
+    },
+    {
+      "caseId": "TC-LOGIN-INVALID-002",
+      "username": "valid.user@example.com",
+      "password": "Incorrect@123",
+      "expectedError": "Invalid username or password"
+    }
+  ],
+  "emptyFields": [
+    {
+      "caseId": "TC-LOGIN-EMPTY-001",
+      "username": "",
+      "password": "",
+      "expectedError": "Email is required"
+    },
+    {
+      "caseId": "TC-LOGIN-EMPTY-002",
+      "username": "valid.user@example.com",
+      "password": "",
+      "expectedError": "Password is required"
+    }
+  ],
+  "lockedUsers": [
+    {
+      "caseId": "TC-LOGIN-LOCKED-001",
+      "username": "locked.user@example.com",
+      "password": "SomePass@123",
+      "expectedError": "Your account is locked"
+    }
+  ]
+}
