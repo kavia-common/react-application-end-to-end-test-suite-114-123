@@ -11,7 +11,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:report": "playwright show-report",
+    "playwright:install": "playwright install --with-deps"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,6 +35,12 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
-  }
+    "@playwright/test": "^1.48.2",
+    "cross-env": "^7.0.3",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@9"
 }

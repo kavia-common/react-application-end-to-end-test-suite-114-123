@@ -27,6 +27,64 @@ Launches the test runner in interactive watch mode.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+## End-to-End (E2E) Tests with Playwright
+
+This repository is configured with Playwright to run E2E tests against a running instance of the app.
+
+- Config file: `playwright.config.ts`
+- Tests directory: `tests/`
+- Example spec: `tests/example.spec.ts`
+- Default baseURL: `process.env.REACT_APP_FRONTEND_URL || 'http://localhost:3000'`
+- Projects: Chromium, Firefox, WebKit
+- Reporter: HTML (view reports via `npm run test:e2e:report`)
+
+### Install dependencies and browsers
+
+```bash
+npm install
+npm run playwright:install
+```
+
+If your environment restricts automatic postinstall scripts, run the install command explicitly.
+
+### Running tests locally
+
+Ensure the app you want to test is running and reachable at the URL pointed to by `REACT_APP_FRONTEND_URL`. For the local dev server:
+
+```bash
+# In one terminal
+npm start
+
+# In another terminal, run tests (headless by default)
+npm run test:e2e
+
+# Run tests with UI
+npm run test:e2e:ui
+
+# Run headed (non-headless) browser
+npm run test:e2e:headed
+
+# View the last HTML report
+npm run test:e2e:report
+```
+
+To target a different URL:
+
+```bash
+REACT_APP_FRONTEND_URL="http://localhost:3001" npm run test:e2e
+```
+
+### Running in CI
+
+Set `REACT_APP_FRONTEND_URL` to the deployed URL for the environment. Retries are enabled (2) in CI automatically.
+
+```bash
+export REACT_APP_FRONTEND_URL="https://your-deployed-app.example.com"
+npm ci
+npm run playwright:install
+npm run test:e2e
+```
+
 ## Customization
 
 ### Colors
