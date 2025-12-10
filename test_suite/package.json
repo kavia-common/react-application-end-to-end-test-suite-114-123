@@ -12,11 +12,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
-    "test:e2e:headed": "playwright test --headed",
+    "test:e2e": "playwright test -c playwright.config.js",
+    "test:e2e:ui": "playwright test --ui -c playwright.config.js",
+    "test:e2e:headed": "playwright test --headed -c playwright.config.js",
     "test:e2e:report": "playwright show-report",
-    "test:e2e:js": "playwright test tests --reporter=list",
+    "test:e2e:js": "playwright test tests --reporter=list -c playwright.config.js",
     "playwright:install": "playwright install --with-deps"
   },
   "eslintConfig": {
